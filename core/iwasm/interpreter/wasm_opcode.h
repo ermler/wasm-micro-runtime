@@ -51,7 +51,8 @@ typedef enum WASMOpcode {
 
     WASM_OP_GET_GLOBAL_64 = 0x1d,
     WASM_OP_SET_GLOBAL_64 = 0x1e,
-    WASM_OP_SET_GLOBAL_AUX_STACK = 0x1f,
+    /* ReE: new proposal exceptionhandling */
+    WASM_OP_TRY_TABLE = 0x1f,
 
     /* variable instructions */
     WASM_OP_GET_LOCAL = 0x20,  /* get_local */
@@ -62,7 +63,9 @@ typedef enum WASMOpcode {
 
     WASM_OP_TABLE_GET = 0x25, /* table.get */
     WASM_OP_TABLE_SET = 0x26, /* table.set */
-    WASM_OP_UNUSED_0x27 = 0x27,
+    /* ReE: WASM_OP_GLOBAL_AUX_STACK = 0x1f conflicted with WASM_OP_TRY_TABLE */
+    /* WASM_OP_UNUSED_0x27 = 0x27, */
+    WASM_OP_SET_GLOBAL_AUX_STACK = 0x27,
 
     /* memory instructions */
     WASM_OP_I32_LOAD = 0x28,     /* i32.load */
